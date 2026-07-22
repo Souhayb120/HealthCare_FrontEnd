@@ -5,11 +5,7 @@
          const token = localStorage.getItem("token");
         const response = await axios.get(
           medecinURL + "/listerLesMedecinPagination?page=0&size=4",
-             {
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-        }
+          
         );
         return response.data.content;
       } catch (error) {
