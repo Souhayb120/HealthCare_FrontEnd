@@ -1,9 +1,12 @@
 import { useState } from "react";
+import AddButton from "./AddButton";
 
 function Table({ data, columns , tableTitle }) {
   return (
     <div className="table-card">
-      <div className="table-title">{tableTitle}</div>
+        
+      <div className="table-title">{tableTitle} </div>
+      
       <table>
         <thead>
           <tr>
@@ -20,7 +23,10 @@ function Table({ data, columns , tableTitle }) {
                 {row[column.key]}
               </td>
             ))}
-             <td className="row-menu">⋮</td>
+           <td className="row-actions">
+  <button className="btn-edit">Edit</button>
+  <button className="btn-delete">Delete</button>
+</td>
           </tr>
         ))}
           {/* {data.map((r) => (

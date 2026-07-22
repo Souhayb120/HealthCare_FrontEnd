@@ -19,6 +19,7 @@ const Patients = () => {
     }, []);
 
     const patientColumns = [
+         { title: "ID", key: "id" },
   { title: "nom", key: "nom" },
   { title: "prenom", key: "prenom" },
   { title: "email", key: "email" },
@@ -32,6 +33,7 @@ const Patients = () => {
       <div className="main">
         <Navbar />
         <div className="content">
+            
           <Table columns={patientColumns} data={patients} tableTitle={"Patients"}/>
         </div>
         <Footer />

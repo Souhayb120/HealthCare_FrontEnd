@@ -4,9 +4,9 @@ function Footer() {
   return (
     <div className="footer">
       <div>
-        <span className="footer-brand">MedAdmin Pro</span>
+        <span className="footer-brand">Health Care+</span>
         <br />
-        © 2026 MedAdmin Health Systems. All rights reserved.
+        © 2026  made by Souhayb Hadi.
       </div>
       <div className="footer-links">
         <a href="#">Privacy Policy</a>

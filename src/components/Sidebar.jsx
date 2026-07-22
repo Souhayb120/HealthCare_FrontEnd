@@ -8,22 +8,17 @@ function Sidebar() {
         <div className="brand-sub">Health Systems</div>
       </div>
 
+<div className="container_side_bar">
       <ul className="nav-list">
-        <li className="nav-item">
-          <svg
-            className="nav-icon"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path d="M3 10.5 12 3l9 7.5" />
-            <path d="M5 9.5V21h14V9.5" />
-          </svg>
-          Home
-        </li>
+        
 
-        <li className="nav-item">
+        <li>
+            <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "nav-item active" : "nav-item"
+            }
+          >
           <svg
             className="nav-icon"
             viewBox="0 0 24 24"
@@ -37,14 +32,14 @@ function Sidebar() {
             <rect x="14" y="14" width="7" height="7" rx="1.5" />
           </svg>
           Dashboard
+          </NavLink>
         </li>
         <li>
           <NavLink
-          
             to="/patients"
-          className={({ isActive }) =>
-      isActive ? "nav-item active" : "nav-item"
-    }
+            className={({ isActive }) =>
+              isActive ? "nav-item active" : "nav-item"
+            }
           >
             <svg
               className="nav-icon"
@@ -59,15 +54,13 @@ function Sidebar() {
             Patients
           </NavLink>
         </li>
-         <li>
-         <NavLink
-           className={({ isActive }) =>
-      isActive ? "nav-item active" : "nav-item"
-    }
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "nav-item active" : "nav-item"
+            }
             to="/Medecins"
           >
-       
-         
             <svg
               className="nav-icon"
               viewBox="0 0 24 24"
@@ -79,30 +72,36 @@ function Sidebar() {
               <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
             </svg>
             Doctors
-         </NavLink>
-        </li>
-         
-        <li>
-              <NavLink
-           className={({ isActive }) =>
-      isActive ? "nav-item active" : "nav-item"
-    }
-            to="/RendezVous"
-          >
-          <svg
-            className="nav-icon"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <rect x="3" y="4" width="18" height="17" rx="2" />
-            <path d="M3 9h18M8 3v4M16 3v4" />
-          </svg>
-          Appointments
           </NavLink>
         </li>
-        <li className="nav-item">
+
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "nav-item active" : "nav-item"
+            }
+            to="/RendezVous"
+          >
+            <svg
+              className="nav-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <rect x="3" y="4" width="18" height="17" rx="2" />
+              <path d="M3 9h18M8 3v4M16 3v4" />
+            </svg>
+            Appointments
+          </NavLink>
+        </li>
+        <li>
+             <NavLink
+            className={({ isActive }) =>
+              isActive ? "nav-item active" : "nav-item"
+            }
+            to="/DossierMedical"
+          >
           <svg
             className="nav-icon"
             viewBox="0 0 24 24"
@@ -114,8 +113,16 @@ function Sidebar() {
             <path d="M9 9h6M9 13h6M9 17h4" />
           </svg>
           Medical Records
+          </NavLink>
         </li>
-        <li className="nav-item">
+        <li>
+        <NavLink
+            className={({ isActive }) =>
+              isActive ? "nav-item active" : "nav-item"
+            }
+            to="/about"
+          >
+        
           <svg
             className="nav-icon"
             viewBox="0 0 24 24"
@@ -127,8 +134,27 @@ function Sidebar() {
             <path d="M12 8h.01M11 12h1v4h1" />
           </svg>
           About
+          </NavLink>
         </li>
       </ul>
+      <div className="nav-item dex">
+<svg
+  className="nav-icon"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth="2"
+  strokeLinecap="round"
+  strokeLinejoin="round"
+>
+  <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+  <path d="M10 17l5-5-5-5" />
+  <path d="M15 12H3" />
+</svg>
+        Deconxion</div>
+</div>
+
+
     </aside>
   );
 }

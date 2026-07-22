@@ -1,11 +1,11 @@
 
-function Cards({  totalMedecines , totalRendezVous , totalDossierMedical}) {
+function Cards({  countMedecin ,countPatients, countRendezVous , countDossiersMedical}) {
   return (
     <div className="stats-grid">
       <div className="stat-card">
         <div>
           <div className="stat-label">Total Patients</div>
-          <div className="stat-value">1</div>
+          <div className="stat-value">{countPatients}</div>
         </div>
         <div className="stat-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -18,7 +18,7 @@ function Cards({  totalMedecines , totalRendezVous , totalDossierMedical}) {
       <div className="stat-card">
         <div>
           <div className="stat-label">Total Doctors</div>
-          <div className="stat-value">{totalMedecines}</div>
+          <div className="stat-value">{countMedecin}</div>
         </div>
         <div className="stat-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -32,7 +32,7 @@ function Cards({  totalMedecines , totalRendezVous , totalDossierMedical}) {
       <div className="stat-card">
         <div>
           <div className="stat-label">Appointments</div>
-          <div className="stat-value">{totalRendezVous}</div>
+          <div className="stat-value">{countRendezVous}</div>
         </div>
         <div className="stat-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -45,7 +45,7 @@ function Cards({  totalMedecines , totalRendezVous , totalDossierMedical}) {
       <div className="stat-card">
         <div>
           <div className="stat-label">Medical Records</div>
-          <div className="stat-value">{totalDossierMedical}</div>
+          <div className="stat-value">{countDossiersMedical}</div>
         </div>
         <div className="stat-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

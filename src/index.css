@@ -214,3 +214,145 @@ tbody tr:last-child td { border-bottom: none; }
 .footer-brand { font-weight: 700; color: #111827; }
 .footer-links { display: flex; gap: 24px; }
 .footer-links a:hover { color: #2563eb; }
+
+
+
+.aboutHeader > div > img{
+  height: 32rem;
+  width: 32rem;
+}
+.aboutDesc{
+display: grid;
+justify-content: center;
+align-items: center;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: medium;
+}
+
+.aboutHeader{
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+}
+
+.stats-grid  img{
+  border-radius: 20px;
+  border: #2564eb3f solid 1px;
+  height: 19rem;
+  width: 19rem;
+}
+
+
+
+
+/* login Form */
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f6f9;
+}
+
+.login-form {
+  width: 350px;
+  padding: 30px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.form-group input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+
+
+.row-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-edit,
+.btn-delete {
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-edit {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.btn-edit:hover {
+  background-color: #2980b9;
+}
+
+.btn-delete {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.btn-delete:hover {
+  background-color: #c0392b;
+}
+
+
+.dex:hover {
+  background-color: #d84636;
+  color: whitesmoke;
+}
+
+
+
+
+/* .container_side_bar{
+  display: block;
+justify-content: space-between;
+} */
