@@ -32,15 +32,14 @@ const Medecins = () => {
         <Sidebar />
         <div className="main">
           <Navbar />
-          
+
           <div className="content">
-            <AddButton name={"Add Doctor"}/>
+            <AddButton name={"Add Doctor"} />
             <Table
               columns={medecinColumns}
               data={medecins}
               tableTitle={"Medecins"}
             />
-            
           </div>
           <Footer />
         </div>

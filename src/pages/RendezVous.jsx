@@ -11,8 +11,16 @@ const RendezVous = () => {
   useEffect(() => {
     async function fetchRendezVous() {
       const data = await getRendezVous();
-      const r = data.map((rdv) => {return ({id: rdv.id ,dateRendezVous:rdv.dateRendezVous , statut: rdv.statut ,patient: rdv.patient.nom ,medecine: rdv.medecine.nom})})
-      console.log(r)
+      const r = data.map((rdv) => {
+        return {
+          id: rdv.id,
+          dateRendezVous: rdv.dateRendezVous,
+          statut: rdv.statut,
+          patient: rdv.patient.nom,
+          medecine: rdv.medecine.nom,
+        };
+      });
+      console.log(r);
       setRendezVous(r);
     }
     fetchRendezVous();
@@ -25,8 +33,6 @@ const RendezVous = () => {
     { title: "medecine", key: "medecine" },
     { title: "patient", key: "patient" },
   ];
-
-
 
   return (
     <div className="app-layout">

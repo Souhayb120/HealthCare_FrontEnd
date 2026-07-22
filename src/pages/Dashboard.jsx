@@ -9,17 +9,14 @@ import { useEffect, useState } from "react";
 import { get } from "react-hook-form";
 import { getCountMedecins } from "../services/getMedecines";
 import { getCountPatients } from "../services/getPatients";
-import { getRendezVous,getCountRendezVous } from "../services/getRendezVous";
+import { getRendezVous, getCountRendezVous } from "../services/getRendezVous";
 import { getCountDossierMedical } from "../services/dossierMedicals";
 function Dashboard() {
   const [rendezVous, setRendezVous] = useState([]);
 
-
-
-
   const [countPatients, setCountPatients] = useState(0);
-   const [countRendezVous, setCountRendezVous] = useState(0);
-   const [countDossiersMedical, setcountDossiersMedical] = useState(0);
+  const [countRendezVous, setCountRendezVous] = useState(0);
+  const [countDossiersMedical, setcountDossiersMedical] = useState(0);
   const [countMedecin, setCountMedecin] = useState(0);
   useEffect(() => {
     async function fetchCount() {
@@ -27,8 +24,16 @@ function Dashboard() {
       const dataP = await getCountPatients();
       const dataD = await getCountRendezVous();
       const dataDs = await getCountDossierMedical();
-       const RendezVous = await getRendezVous();
-      const rendez = RendezVous.map((rdv) => {return ({id: rdv.id ,dateRendezVous:rdv.dateRendezVous , statut: rdv.statut ,patient: rdv.patient.nom ,medecine: rdv.medecine.nom})})
+      const RendezVous = await getRendezVous();
+      const rendez = RendezVous.map((rdv) => {
+        return {
+          id: rdv.id,
+          dateRendezVous: rdv.dateRendezVous,
+          statut: rdv.statut,
+          patient: rdv.patient.nom,
+          medecine: rdv.medecine.nom,
+        };
+      });
       setRendezVous(rendez);
       setCountMedecin(dataM);
       setCountPatients(dataP);
@@ -38,7 +43,7 @@ function Dashboard() {
     fetchCount();
   }, []);
 
-   const rendezVousColumns = [
+  const rendezVousColumns = [
     { title: "ID", key: "id" },
     { title: "dateRendezVous", key: "dateRendezVous" },
     { title: "statut", key: "statut" },
@@ -52,8 +57,13 @@ function Dashboard() {
       <div className="main">
         <Navbar />
         <div className="content">
-     <Cards countDossiersMedical={countDossiersMedical} countRendezVous={countRendezVous} countPatients={countPatients} countMedecin={countMedecin}/>
-       <Table
+          <Cards
+            countDossiersMedical={countDossiersMedical}
+            countRendezVous={countRendezVous}
+            countPatients={countPatients}
+            countMedecin={countMedecin}
+          />
+          <Table
             columns={rendezVousColumns}
             data={rendezVous}
             tableTitle={"Latest Rendez_Vous"}

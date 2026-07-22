@@ -8,24 +8,22 @@ import { getRendezVous } from "../services/getRendezVous";
 import { getDossierMedical } from "../services/dossierMedicals";
 
 const DossierMedical = () => {
-const [dossierMedical , setDossierMedical] = useState([]);
+  const [dossierMedical, setDossierMedical] = useState([]);
   useEffect(() => {
     async function fetchDossierMedical() {
       const data = await getDossierMedical();
-      console.log(data)
+      console.log(data);
       setDossierMedical(data);
     }
     fetchDossierMedical();
-  }, []);   
+  }, []);
 
   const dossierMedicalColumns = [
     { title: "ID", key: "id" },
     { title: "diagnostic", key: "diagnostic" },
     { title: "observations", key: "observations" },
-    { title: "dateCreation", key: "dateCreation" }
+    { title: "dateCreation", key: "dateCreation" },
   ];
-
-
 
   return (
     <div className="app-layout">
