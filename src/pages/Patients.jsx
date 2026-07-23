@@ -5,11 +5,13 @@ import Table from "../components/Table";
 import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
 import { getPatients } from "../services/getPatients";
+  import axios from "axios";
+
 
 const Patients = () => {
- 
-  const [patients, setPatients] = useState([]);
-  
+ const API_URL = "http://localhost:8080/api/patients/supprimerUnPatient"
+  const [patients, setPatients] = useState([]); 
+
     useEffect(() => {
         async function fetchPatients(){
             const data = await getPatients();
@@ -17,6 +19,18 @@ const Patients = () => {
         }
       fetchPatients();
     }, []);
+
+
+   const deleteUser = async (id) => {
+    try {
+      await axios.delete(`${API_URL}/${id}`);
+      setPatients(patients.filter((patient) => patient.id !== id)); 
+      
+    } catch (error) {
+      console.error("Error deleting patient:", error);
+    }
+  };
+
 
     const patientColumns = [
          { title: "ID", key: "id" },
@@ -34,7 +48,7 @@ const Patients = () => {
         <Navbar />
         <div className="content">
             
-          <Table columns={patientColumns} data={patients} tableTitle={"Patients"}/>
+          <Table columns={patientColumns} data={patients} tableTitle={"Patients"} deletedUser={deleteUser}/>
         </div>
         <Footer />
       </div>

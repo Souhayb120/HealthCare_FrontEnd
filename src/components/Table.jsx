@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AddButton from "./AddButton";
 
-function Table({ data, columns , tableTitle }) {
+function Table({ data, columns , tableTitle ,deletedUser }) {
   return (
     <div className="table-card">
         
@@ -25,7 +25,7 @@ function Table({ data, columns , tableTitle }) {
             ))}
            <td className="row-actions">
   <button className="btn-edit">Edit</button>
-  <button className="btn-delete">Delete</button>
+  <button onClick={() => deletedUser(row.id)} className="btn-delete">Delete</button>
 </td>
           </tr>
         ))}

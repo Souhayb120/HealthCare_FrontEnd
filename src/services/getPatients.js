@@ -11,6 +11,7 @@ export const getPatients = async () => {
   }
 
 };
+
   export const getCountPatients = async () => {
         try {
           const response = await getPatients()
