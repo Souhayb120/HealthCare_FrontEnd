@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import AuthService from "../services/AuthService";
 
-const RegisterComponent = () => {
+const Roles = () => {
   const [userName, setUserName] = useState("");
   // const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState("");
@@ -115,4 +115,4 @@ const RegisterComponent = () => {
   );
 };
 
-export default RegisterComponent;
+export default Roles;
