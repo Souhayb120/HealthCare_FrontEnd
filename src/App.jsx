@@ -9,13 +9,35 @@ import Login from "./pages/LoginComponent";
 import RegisterComponent from "./pages/RegisterComponent";
 import LoginComponent from "./pages/LoginComponent";
 
+
+import { Navigate } from 'react-router-dom'
+import { useState } from "react";
+
+function ProtectedRoute({ children, isAuthenticated }) {
+  if (!isAuthenticated) {
+    return <Navigate to='/login' replace />
+  }
+
+  return children
+}
+
 function App() {
+  
+ const [isAuthenticated, setIsAuthenticated] = useState(false)
 
   return (
     <Routes>
+    
       <Route path="/register" element={<RegisterComponent />}></Route>
-      <Route path="/login" element={<LoginComponent />}></Route>
-      <Route path="/" element={<Dashboard />}></Route>
+      <Route path="/" element={<LoginComponent />}></Route>
+        <Route
+        path='/dashboard'
+        element={
+          <ProtectedRoute isAuthenticated={isAuthenticated}>
+            <Dashboard />
+          </ProtectedRoute>
+        }
+      />
       <Route path="/patients" element={<Patients />}></Route>
       <Route path="/Medecins" element={<Medecins />}></Route>
       <Route path="/RendezVous" element={<RendezVous />}></Route>
